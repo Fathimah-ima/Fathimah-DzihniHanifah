@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /* bordered form */
+            form {
+                border: 1px solid #CACACA;
+            }
+
+            h1 {
+                text-align: left;
+                font-size: x-larger;
+                margin-bottom: 20px;
+            }
+
+            body {
+                margin: 120px 30px 120px 30px;
+                font-family: Calibri, Arial, sans-serif;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            form {
+                font-family: Calibri, Arial, sans-serif;
+                margin: 0 auto;
+                width: 500px;
+                padding: 1em 2em;
+                border: 1px solid #CACACA;
+                border-radius: 10px;
+            }
+
+            label {
+                text-align: right;
+                display: inline-block;
+                width: 100px;
+                vertical-align: top;
+                margin: 4px;
+                padding: 8px;
+            }
+
+            #review {
+                vertical-align: top;
+            }
+
+
+            input[type="text"], textarea, select{
+                width: 250px;
+                padding: 8px;
+                margin: 4px;
+            }
+
+           
+
+            /* set a style for all button */
+            button {
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                width: 47%;
+            }
+
+
+            #button1 {
+                border: none;
+                padding: 10px 20px;
+                color: white;
+                background-color: #C00000;
+                width: 47%;
+                display: inline-block;
+            }
+
+            #button2 {
+                border: none;
+                padding: 10px 20px;
+                color: white;
+                background-color: green;
+                width: 47%;
+                display: inline-block;
+            }
+
+            /* add a hover effect for buttons */
+            input[type=submit]:hover {
+                opacity: 0.67;
+                background-color: darkgreen;
+            }
+
+            /* add a hover effect for buttons */
+            input[type=reset]:hover {
+                opacity: 0.67;
+                background-color: #900000;
+            }
+
+        </style>
+        </style>
+    </head>
+    <body>
+        <form>
+            <h1>Workshop Registration</h1>
+            <label>Name</label>
+            <input type="text" />
+            <br />
+
+            <label>Email</label>
+            <input type="text" />
+            <br />
+
+            <label>Address</label>
+            <textarea id="review" name="review" rows="4" cols="30"></textarea>
+            <br />
+
+            <label for="age">Age</label>
+            <select id="select">
+                <option value="-Select Age-">- Select Age -</option>
+                <option value="under 17">under 17</option>
+                <option value="17-25">17-25</option>
+                <option value="26-35">26-35</option>
+                <option value="above 35">above 35</option>
+            </select>
+            <br />
+
+            <br />
+            <input type="reset" value="Reset" id="button1">
+            <input type="submit" value="Submit Form" id="button2">
+
+        </form>
+    </body>
+</html>
