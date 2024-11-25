@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            form {
+                border: 1px solid #CACACA;
+            }
+
+            h1 {
+                text-align: left;
+                font-size: x-larger;
+                margin-bottom: 20px;
+            }
+
+            body {
+                margin: 120px 30px 120px 30px;
+                font-family: Calibri, Arial, sans-serif;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            form {
+                font-family: Calibri, Arial, sans-serif;
+                margin: 0 auto;
+                width: 500px;
+                padding: 1em 2em;
+                border: 1px solid #CACACA;
+                border-radius: 10px;
+            }
+
+            label {
+                text-align: right;
+                display: inline-block;
+                width: 100px;
+                vertical-align: top;
+                margin: 4px;
+                padding: 8px;
+            }
+
+            #review {
+                vertical-align: top;
+            }
+
+
+            input[type="text"], textarea, select{
+                width: 250px;
+                padding: 8px;
+                margin: 4px;
+            }
+
+            button {
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                width: 47%;
+            }
+
+
+            #button1 {
+                border: none;
+                padding: 10px 20px;
+                color: white;
+                background-color: #C00000;
+                width: 47%;
+                display: inline-block;
+            }
+
+            #button2 {
+                border: none;
+                padding: 10px 20px;
+                color: white;
+                background-color: green;
+                width: 47%;
+                display: inline-block;
+            }
+
+            input[type=submit]:hover {
+                opacity: 0.67;
+                background-color: darkgreen;
+            }
+
+            input[type=reset]:hover {
+                opacity: 0.67;
+                background-color: #900000;
+            }
+
+            .required::after {
+            content: " *";
+            color: red;
+            font-weight: bold; 
+            }
+        </style>
+    </head>
+    <body>
+        <form id="registrationForm" onreset="resetForm()" onsubmit="return validateForm(event)">
+            <h1>Workshop Registration</h1>
+    
+            <div id="errorMessage" style="display: none; background-color: #EECCCC; color: black; padding: 10px 20px; border-radius: 4px; margin: 4px 0;">
+                Please fill in your name and email.
+            </div>
+    
+            <div id="successMessage" style="display: none; background-color: #CCEECC; color: black; padding: 10px 20px; border-radius: 4px; margin: 4px 0;">
+                Thank you for your interest in our workshop. We will send you a confirmation mail if your name is added to the guest list.
+            </div>
+    
+            <label for="name" class="required">Name</label>
+            <input type="text" id="name" name="name" />
+            <br />
+    
+            <label for="email" class="required">Email</label>
+            <input type="text" id="email" name="email" />
+            <br />
+    
+            <label>Address</label>
+            <textarea id="review" name="review" rows="4" cols="30"></textarea>
+            <br />
+    
+            <label for="age">Age</label>
+            <select id="select" name="age">
+                <option value="-Select Age-">- Select Age -</option>
+                <option value="under 17">under 17</option>
+                <option value="17-25">17-25</option>
+                <option value="26-35">26-35</option>
+                <option value="above 35">above 35</option>
+            </select>
+            <br />
+    
+            <br />
+            <input type="reset" value="Reset" id="button1">
+            <input type="submit" value="Submit Form" id="button2">
+        </form>
+    
+        <script>
+            function validateForm(event) {
+                event.preventDefault();
+    
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const errorMessage = document.getElementById('errorMessage');
+                const successMessage = document.getElementById('successMessage');
+    
+                if (!name || !email) {
+                    errorMessage.style.display = 'block';
+                    successMessage.style.display = 'none';
+                    return false;
+                }
+    
+                errorMessage.style.display = 'none';
+                successMessage.style.display = 'block';
+                return true; 
+            }
+    
+            function resetForm() {
+                const errorMessage = document.getElementById('errorMessage');
+                const successMessage = document.getElementById('successMessage');
+                errorMessage.style.display = 'none';
+                successMessage.style.display = 'none';
+            }
+        </script>
+    </body>
+</html>
